@@ -7,10 +7,10 @@ fun main() {
 }
 
 fun recursiveBinarySearch(
-        searchingNumber: Int,
-        array: IntArray,
-        startIndex: Int = 0,
-        endIndex: Int = array.size - 1
+    searchingNumber: Int,
+    array: IntArray,
+    startIndex: Int = 0,
+    endIndex: Int = array.size - 1
 ): Int {
     val middleIndex: Int = startIndex + (endIndex - startIndex) / 2
 
@@ -18,9 +18,17 @@ fun recursiveBinarySearch(
 
     if (startIndex == endIndex) return -1
 
-    if (searchingNumber < array[middleIndex]) return recursiveBinarySearch(searchingNumber, array, endIndex = middleIndex)
+    if (searchingNumber < array[middleIndex]) return recursiveBinarySearch(
+        searchingNumber,
+        array,
+        endIndex = middleIndex
+    )
 
-    if (searchingNumber > array[middleIndex]) return recursiveBinarySearch(searchingNumber, array, startIndex = middleIndex + 1)
+    if (searchingNumber > array[middleIndex]) return recursiveBinarySearch(
+        searchingNumber,
+        array,
+        startIndex = middleIndex + 1
+    )
 
     return -1
 }

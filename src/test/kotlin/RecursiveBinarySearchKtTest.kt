@@ -9,22 +9,22 @@ import java.util.stream.Stream
 class RecursiveBinarySearchKtTest {
 
     @ParameterizedTest
-    @MethodSource("provide test arguments for recursiveSearch")
-    fun `test recursiveSearch`(expected: Int, array: IntArray, searchNumber: Int) {
+    @MethodSource("provide test arguments for recursive binary search")
+    fun `test recursive binary search`(expected: Int, array: IntArray, searchNumber: Int) {
         val actual = recursiveBinarySearch(searchNumber, array)
 
         assertEquals(expected, actual)
     }
 
-    fun `provide test arguments for recursiveSearch`(): Stream<Arguments> =
-            Stream.of(
-                    Arguments.of(1, intArrayOf(1, 2), 2),
-                    Arguments.of(3, intArrayOf(1, 2, 4, 7, 10), 7),
-                    Arguments.of(3, intArrayOf(0, 6, 7, 9), 9),
-                    Arguments.of(0, intArrayOf(1, 2, 4, 9), 1),
-                    Arguments.of(0, intArrayOf(1), 1),
-                    Arguments.of(-1, intArrayOf(1, 2), 3),
-                    Arguments.of(-1, intArrayOf(1, 5, 10, 20), 15),
-                    Arguments.of(-1, intArrayOf(0), 15)
-            )
+    fun `provide test arguments for recursive binary search`(): Stream<Arguments> =
+        Stream.of(
+            Arguments.of(1, intArrayOf(1, 2), 2),
+            Arguments.of(3, intArrayOf(1, 2, 4, 7, 10), 7),
+            Arguments.of(3, intArrayOf(0, 6, 7, 9), 9),
+            Arguments.of(0, intArrayOf(1, 2, 4, 9), 1),
+            Arguments.of(0, intArrayOf(1), 1),
+            Arguments.of(-1, intArrayOf(1, 2), 3),
+            Arguments.of(-1, intArrayOf(1, 5, 10, 20), 15),
+            Arguments.of(-1, intArrayOf(0), 15)
+        )
 }
